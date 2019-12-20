@@ -21,6 +21,16 @@
 - include: main_arch.yml
   when: ansible_os_family == 'Archlinux'
 
+- name: Configure SystemD rsyslog service
+  template:
+    src: rsyslog.service.j2
+    dest: /lib/systemd/system/rsyslog.service
+    owner: root
+    group: root
+    mode: 0644
+  tags:
+    - rsyslog
+
 - name: setup main configuration
   tags:
     - rsyslog

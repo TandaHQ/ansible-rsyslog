@@ -1,0 +1,11 @@
+[Path]
+# This service's autostart is linked to this path activation module and the scripts found in the onboot role
+# It's particularly important that we read
+#   * from the tags and load into ENV
+
+PathExists=/home/{{ ruby_user }}/core/shared/userdata.env
+
+Unit=rsyslog.service
+
+[Install]
+WantedBy=multi-user.target

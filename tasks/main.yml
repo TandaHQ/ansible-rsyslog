@@ -31,6 +31,16 @@
   tags:
     - rsyslog
 
+- name: Configure SystemD rsyslog path
+  template:
+    src: rsyslog.path.j2
+    dest: /lib/systemd/system/rsyslog.path
+    owner: root
+    group: root
+    mode: 0644
+  tags:
+    - rsyslog
+
 - name: setup main configuration
   tags:
     - rsyslog

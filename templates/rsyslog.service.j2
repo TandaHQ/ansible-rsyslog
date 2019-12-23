@@ -4,6 +4,8 @@ Requires=syslog.socket
 Documentation=man:rsyslogd(8)
 Documentation=http://www.rsyslog.com/doc/
 
+ConditionPathExists=/home/{{ ruby_user }}/core/shared/userdata.env
+
 [Service]
 Type=notify
 ExecStart=/usr/sbin/rsyslogd -n

@@ -41,6 +41,12 @@
   tags:
     - rsyslog
 
+- service:
+    name: rsyslog.path
+    enabled: yes
+  tags:
+    - rsyslog
+
 - name: setup main configuration
   tags:
     - rsyslog
